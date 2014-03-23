@@ -36,7 +36,7 @@ import java.util.Map;
  * @author Vasilis Vryniotis <bbriniotis at datumbox.com>
  * @see <a href="http://blog.datumbox.com/developing-a-naive-bayes-text-classifier-in-java/">http://blog.datumbox.com/developing-a-naive-bayes-text-classifier-in-java/</a>
  */
-public class NaiveBayesExample {
+public class TrainAndStore {
 
     /**
      * Reads the all lines from a file and places it a String array. In each 
