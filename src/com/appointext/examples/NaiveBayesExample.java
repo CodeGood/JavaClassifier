@@ -75,9 +75,9 @@ public class NaiveBayesExample {
     public static void main(String[] args) throws IOException {
         //map of dataset files
         Map<String, String> trainingFiles = new HashMap<String, String>();
-        trainingFiles.put("English", "E:/Project/NaiveBayesClassifier-master/resources/datasets/training.language.en.txt");
-        trainingFiles.put("French", "E:/Project/NaiveBayesClassifier-master/resources/datasets/training.language.fr.txt");
-        trainingFiles.put("German", "E:/Project/NaiveBayesClassifier-master/resources/datasets/training.language.de.txt");
+        trainingFiles.put("Meeting", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.meeting");
+        trainingFiles.put("Reply", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.reply");
+        trainingFiles.put("Query", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.query");
         
         //loading examples in memory
         Map<String, String[]> trainingExamples = new HashMap<String, String[]>();
@@ -113,17 +113,9 @@ public class NaiveBayesExample {
         
         //Use classifier
         nb = new NaiveBayes(knowledgeBase);
-        String exampleEn = "I am English";
+        String exampleEn = "Sure. I am in.";
         Map<String, Double> res = nb.predict(exampleEn);
-        System.out.println(res + " is " +  res.get("English") + "% English");
-        
-//        String exampleFr = "Je suis Français";
-//        res = nb.predict(exampleFr);
-//        System.out.format("The sentense \"%s\" was classified as \"%d\".%n", exampleFr, res.get("French"));
-//        
-//        String exampleDe = "Ich bin Deutsch";
-//        res = nb.predict(exampleDe);
-//        System.out.format("The sentense \"%s\" was classified as \"%d\".%n", exampleDe, res.get("German"));
+        System.out.println("Confidence Values for " + exampleEn + " :: " + res);
         
 
     }
