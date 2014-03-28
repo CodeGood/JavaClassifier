@@ -75,9 +75,10 @@ public class TrainAndStore {
     public static void main(String[] args) throws IOException {
         //map of dataset files
         Map<String, String> trainingFiles = new HashMap<String, String>();
-        trainingFiles.put("Meeting", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.meeting");
-        trainingFiles.put("Reply", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.reply");
-        trainingFiles.put("Query", "E:/Project/NaiveBayesClassifier-master/resources/trainingData/trainingData.query");
+        trainingFiles.put("Meeting", "../training/trainingData.meeting");
+        trainingFiles.put("Reply", "../training/trainingData.reply");
+        trainingFiles.put("Query", "../training/trainingData.query");
+        trainingFiles.put("Irrelevant", "../training/trainingData.irrelevant");
         
         //loading examples in memory
         Map<String, String[]> trainingExamples = new HashMap<String, String[]>();
@@ -95,11 +96,11 @@ public class TrainAndStore {
         
         try {
         	
-        	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("E:/Classifier.ser"));
+        	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("../Classifier.ser"));
         	oos.writeObject(knowledgeBase);
         	oos.close();
         	knowledgeBase = null;
-        	ObjectInputStream ois = new ObjectInputStream(new FileInputStream("E:/Classifier.ser"));
+        	ObjectInputStream ois = new ObjectInputStream(new FileInputStream("../Classifier.ser"));
         	knowledgeBase = (NaiveBayesKnowledgeBase)ois.readObject();
         	ois.close();
         }
@@ -113,7 +114,7 @@ public class TrainAndStore {
         
         //Use classifier
         nb = new NaiveBayes(knowledgeBase);
-        String exampleEn = "Sure. I am in.";
+        String exampleEn = "Hi.";
         Map<String, Double> res = nb.predict(exampleEn);
         System.out.println("Confidence Values for " + exampleEn + " :: " + res);
         

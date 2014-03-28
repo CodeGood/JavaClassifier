@@ -2,8 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="libs/stanford-postagger.jar"/>
 	<classpathentry kind="lib" path="D:/Project/Final Year NLP/stanford-ner-2014-01-04/stanford-ner-3.3.1-javadoc.jar"/>
-	<classpathentry kind="lib" path="libs/stanford-ner.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
