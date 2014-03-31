@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 public class NERecognizer {
-
+	
     public static String NERTagger(String message) throws IOException {
 
       String serializedClassifier = "classifiers/english.all.3class.distsim.crf.ser.gz";
