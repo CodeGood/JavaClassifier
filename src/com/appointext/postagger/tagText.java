@@ -4,10 +4,6 @@ import edu.stanford.nlp.tagger.maxent.MaxentTagger;
  
 public class tagText {
 	
-	public static void main(String[] ags)throws Exception {
-		System.out.println(posTagger("She sat down at her desk on a Saturday"));
-	}
-	
 	public static String posTagger(String message) throws IOException,
 		ClassNotFoundException {
 		 

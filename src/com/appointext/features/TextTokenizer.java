@@ -16,10 +16,10 @@
  */
 package com.appointext.features;
 
-import com.appointext.dataobjects.Document;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
+
+import com.appointext.dataobjects.Document;
 
 /**
  * TextTokenizer class used to tokenize the texts and store them as Document
@@ -41,7 +41,7 @@ public class TextTokenizer {
      * @return 
      */
     public static String preprocess(String text) {
-        return text.replaceAll("\\p{P}", " ").replaceAll("\\s+", " ").toLowerCase(Locale.getDefault());
+        return text.replaceAll("\\p{P}", " ").replaceAll("\\s+", " ");
     }
     
     /**
