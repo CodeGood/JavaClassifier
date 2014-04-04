@@ -96,11 +96,11 @@ public class TrainAndStore {
         
         try {
         	
-        	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./Classifier.ser"));
+        	ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./classifier.ser"));
         	oos.writeObject(knowledgeBase);
         	oos.close();
         	knowledgeBase = null;
-        	ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./Classifier.ser"));
+        	ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./classifier.ser"));
         	knowledgeBase = (NaiveBayesKnowledgeBase)ois.readObject();
         	ois.close();
         }
