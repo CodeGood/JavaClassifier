@@ -79,6 +79,7 @@ public class TrainAndStore {
         trainingFiles.put("Reply", "./training/trainingData.reply");
         trainingFiles.put("Query", "./training/trainingData.query");
         trainingFiles.put("Irrelevant", "./training/trainingData.irrelevant");
+        //trainingFiles.put("Cancel", "./training/trainingData.cancel");
         
         //loading examples in memory
         Map<String, String[]> trainingExamples = new HashMap<String, String[]>();
@@ -114,7 +115,7 @@ public class TrainAndStore {
         
         //Use classifier
         nb = new NaiveBayes(knowledgeBase);
-        String exampleEn = "Is Manasa coming to the movie tomorrow?";
+        String exampleEn = "Suits me. I shall meet you there.";
         Map<String, Double> res = nb.predict(exampleEn);
         System.out.println("Confidence Values for " + exampleEn + " :: " + res);
         
