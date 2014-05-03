@@ -88,7 +88,7 @@ public class TextTokenizer {
 			for(int j=0;j<queryKeyWords.length;++j) 	{
 				if(keywordArray[i].equalsIgnoreCase(queryKeyWords[j]))	{
 					counts.put(keywordArray[i], ++counter);
-					System.out.println(keywordArray[i]);
+					//System.out.println(keywordArray[i]);
 				}
 			}
 
@@ -96,14 +96,14 @@ public class TextTokenizer {
 				
 				if(keywordArray[i].equalsIgnoreCase(replyKeyWords[j]))	{
 					counts.put(keywordArray[i], ++counter);
-					System.out.println(keywordArray[i]);
+					//System.out.println(keywordArray[i]);
 				}
 			}
 
 			for(int j=0;j<meetingKeyWords.length;++j) 	{
 				if(keywordArray[i].equalsIgnoreCase(meetingKeyWords[j]))	{
 					counts.put(keywordArray[i], ++counter);
-					System.out.println(keywordArray[i]);
+					//System.out.println(keywordArray[i]);
 				}
 			}
 

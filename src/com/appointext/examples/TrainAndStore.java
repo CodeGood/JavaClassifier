@@ -75,7 +75,7 @@ public class TrainAndStore {
     public static void main(String[] args) throws IOException {
         //map of dataset files
         Map<String, String> trainingFiles = new HashMap<String, String>();
-        trainingFiles.put("Meeting", "./training/trainingData.meeting");
+        //trainingFiles.put("Meeting", "./training/trainingData.meeting");
         trainingFiles.put("Reply", "./training/trainingData.reply");
         trainingFiles.put("Query", "./training/trainingData.query");
         trainingFiles.put("Irrelevant", "./training/trainingData.irrelevant");
@@ -115,9 +115,29 @@ public class TrainAndStore {
         
         //Use classifier
         nb = new NaiveBayes(knowledgeBase);
-        String exampleEn = "Suits me. I shall meet you there.";
+        String exampleEn = "That show is sold out. We shall go to the morning show?";
         Map<String, Double> res = nb.predict(exampleEn);
-        System.out.println("Confidence Values for " + exampleEn + " :: " + res);
+        
+        String category = null;
+		Double minimumConfidence = 0 - Double.MAX_VALUE;
+
+		for (Map.Entry<String, Double> entry : res.entrySet()) {
+			String key = entry.getKey();
+			Double value = entry.getValue();
+
+			if(value > minimumConfidence){
+
+				minimumConfidence = value;
+				category = key;
+
+				//Log.d("Confidence Value", "The values are minimumConfidence :" + minimumConfidence + " category :" + category);
+			}
+
+		}// get the category and the confidence in case it is required
+
+        
+        //System.out.println("Confidence Values for " + exampleEn + " :: " + res);
+		System.out.println(exampleEn + " is a " + category);
         
 
     }
