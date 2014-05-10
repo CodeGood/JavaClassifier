@@ -115,7 +115,7 @@ public class TrainAndStore {
         
         //Use classifier
         nb = new NaiveBayes(knowledgeBase);
-        String exampleEn = "That show is sold out. We shall go to the morning show?";
+        String exampleEn = "Yes! We will go!";
         Map<String, Double> res = nb.predict(exampleEn);
         
         String category = null;
